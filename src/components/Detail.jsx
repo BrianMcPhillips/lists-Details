@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import { getArnold } from '../services/heyArnold';
+import { getCharacter } from '../services/heyArnold';
 
 export default class Detail extends Component {
   state = {
-    details: {}
+    detail: {}
   }
 
   componentDidMount = () => {
-    getArnold(this.props.match.params._id)
-      .then(details => this.setState({ details }));
+    getCharacter(this.props.match.params.id)
+      .then(detail => this.setState({ detail }));
   }
 
   render() {
-    const { details } = this.state;
+    const { detail } = this.state;
     return (
       <div>
-        <h1>{details.name}</h1>
-        <img src={details.image} alt={details.name}/>
+        <h1>{detail.name}</h1>
+        <img src={detail.image} alt={detail.name}/>
       </div>
     );
   }

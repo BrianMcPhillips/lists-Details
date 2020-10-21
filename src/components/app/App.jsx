@@ -21,7 +21,7 @@ export default function App() {
             render={(routerProps) => <List {...routerProps} />}
           />
           <Route
-            path="/detail/:_id"
+            path="/detail/:id"
             exact
             render={(routerProps) => <Detail {...routerProps} />}
           />
